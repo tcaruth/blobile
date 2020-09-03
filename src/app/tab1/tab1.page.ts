@@ -34,7 +34,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   public lastUpdate = Date.now();
   public filterVisible = false;
   public stale = false;
-  public staleThreshold = 30 * 1000; // 30 seconds
+  public staleThreshold = 30 * 1000; // 30s
 
   private subscription: Subscription;
   private api = new APIService();
@@ -50,6 +50,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   }
 
   async ngOnInit() {
+    console.debug('Stream.ngOnInit()');
     this.showLoading();
     this.settings.ready.finally(() => {
       this.segment = this.settings.getSegment();
@@ -88,17 +89,26 @@ export class Tab1Page implements OnInit, OnDestroy {
     */
   }
 
+  forceRefresh(evt: any) {
+    setTimeout(() => {
+      this.api.retry().finally(() => {
+        evt.target.complete();
+      });
+    }, 500);
+  }
+
   toggleSearchbar() {
     this.filterVisible = !this.filterVisible;
-    console.debug(`filterVisible=${this.filterVisible}`);
+    console.debug(`Stream.toggleSearchbar(): filterVisible=${this.filterVisible}`);
   }
 
   filterList(evt: any) {
     this.searchTerm = evt.srcElement.value;
-    return this.refresh();
+    return this.refreshUI();
   }
 
   getSegmentGames() {
+    console.debug('Stream.getSegmentGames()');
     if (this.data && this.data.games && this.data.games.schedule) {
       return this.data.games.schedule.filter((game: any) => {
         switch(this.segment) {
@@ -109,7 +119,7 @@ export class Tab1Page implements OnInit, OnDestroy {
           case 'favorites':
             return this.settings.isFavorite(game.homeTeam) || this.settings.isFavorite(game.awayTeam);
           default:
-            console.warn(`unhandled segment: ${this.segment}`);
+            console.warn(`Stream.getSegmentGames(): unhandled segment: ${this.segment}`);
             return false;
         }
       }).sort((a: any, b: any) => {
@@ -156,11 +166,12 @@ export class Tab1Page implements OnInit, OnDestroy {
   }
 
   getNextSeasonStart() {
-    
     return `${this.countdown.hours} ${this.countdown.hours === 1? 'hour':'hours'}, ${this.countdown.minutes} ${this.countdown.minutes === 1? 'minute':'minutes'}, ${this.countdown.seconds} ${this.countdown.seconds === 1? 'second':'seconds'}`;
   }
 
-  refresh() {
+  refreshUI() {
+    console.debug('Stream.refreshUI()');
+
     let ret = this.getSegmentGames();
 
     if (this.searchTerm && this.searchTerm.length >= 2) {
@@ -180,48 +191,83 @@ export class Tab1Page implements OnInit, OnDestroy {
       this.segment = evt.detail.value;
       this.settings.setSegment(this.segment);
     }
-    console.debug('segment changed:', evt);
-    this.refresh();
+    console.debug('Stream.segmentChanged():', evt);
+    this.refreshUI();
   }
 
   checkStale() {
-    if (this.lastUpdate + this.staleThreshold < Date.now()) {
-      this.stale = true;
-    } else {
-      this.stale = false;
+    const current = this.stale;
+    if (this.games && this.games.length > 0) {
+      const active = this.games.find(game => !game.gameComplete);
+      if (active) {
+        // there are still active games, check staleness based on the last update received
+        if (this.lastUpdate + this.staleThreshold < Date.now()) {
+          this.stale = true;
+        } else {
+          this.stale = false;
+        }
+      } else {
+        // all active games have completed
+        this.stale = false;
+        // const percent = Math.round(Date.now() % (60 * 60 * 1000) / (60 * 60 * 1000)); // how far through the hour are we?
+      }
     }
+
+    console.debug(`Stream.checkStale(): ${current} -> ${this.stale}`);
+  }
+
+  onEvent(evt: MessageEvent|Event) {
+    if (evt['type'] === 'error') {
+      this.onError(evt);
+      return;
+    }
+
+    this.lastUpdate = Date.now();
+    setTimeout(() => {
+      this.errors = 0;
+      this.checkStale();
+    }, 1000);
+
+    const data = JSON.parse((evt as MessageEvent).data).value;
+
+    if (!this.data) {
+      this.data = {};
+    }
+
+    for (const key of Object.keys(data)) {
+      this.data[key] = data[key];
+    }
+
+    console.debug('Stream.onEvent(): current data:', this.data);
+    this.refreshUI();
+    this.hideLoading();
+  }
+
+  onError(evt: Event) {
+    console.debug('Stream.onError():', evt);
+    this.hideLoading();
+    this.loading = false;
+    // wait a couple of seconds before actually marking it as an error
+    setTimeout(() => {
+      this.errors++;
+      this.checkStale();
+    }, 1000);
   }
 
   startListening() {
-    console.log('opening event stream to blaseball.com');
+    console.debug('Stream.startListening(): opening event stream to blaseball.com');
     this.showLoading();
 
     const errorWait = 1000;
 
+    const onError = (err: Event) => {
+    };
+
     const observable = this.api.start();
-    this.subscription = observable.subscribe(evt => {
-      this.lastUpdate = Date.now();
-      setTimeout(() => {
-        this.errors = 0;
-        this.checkStale();
-      }, errorWait);
-      const data = JSON.parse(evt.data).value;
-
-      for (const key of Object.keys(data)) {
-        this.data[key] = data[key];
-      }
-
-      console.debug('current data:', this.data);
-      this.refresh();
-      this.hideLoading();
+    this.subscription = observable.subscribe((evt) => {
+      this.onEvent(evt);
     }, (err) => {
-      this.hideLoading();
-      this.loading = false;
-      // wait a couple of seconds before actually marking it as an error
-      setTimeout(() => {
-        this.errors++;
-        this.checkStale();
-      }, errorWait);
+      this.onError(err);
     });
   }
 

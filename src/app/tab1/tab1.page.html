@@ -7,9 +7,11 @@
       <ion-button *ngIf="loading || stale">
         <ion-spinner></ion-spinner>
       </ion-button>
+      <!--
       <ion-button *ngIf="errors &gt; 0 && !isFinished()">
         <ion-icon name="alert-circle-outline" color="danger"></ion-icon>
       </ion-button>
+      -->
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar *ngIf="ready && !isFinished()">
@@ -39,6 +41,12 @@
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="forceRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="baseball-outline"
+    ><ion-spinner name="default"></ion-spinner>
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-searchbar *ngIf="filterVisible" debounce="200" value="{{searchTerm}}" showCancelButton="focus" (ionInput)="filterList($event)"></ion-searchbar>
   <span *ngIf="isFinished()">
     <ion-item lines="none">
@@ -58,11 +66,14 @@
     <ion-item lines="none" *ngIf="!isPostseason()">
       <h4 *ngIf="data && data.games" class="ion-no-margin">Season {{data.games.season.seasonNumber + 1}}, Day {{data.games.sim.day + 1}}</h4>
     </ion-item>
+    <ion-item lines="none" *ngIf="segment === 'active' && (!games || games.length === 0)">
+      No more active games for day {{data.games.sim.day + 1}}.
+    </ion-item>
     <ion-grid>
       <ion-row>
         <!-- size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6" -->
         <ion-col size="12" *ngFor="let game of games; trackBy: gameId">
-          <app-diamond [game]="game" (refresh)="refresh()"></app-diamond>
+          <app-diamond [game]="game" (refresh)="refreshUI()"></app-diamond>
         </ion-col>
       </ion-row>
     </ion-grid>
