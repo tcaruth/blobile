@@ -566,8 +566,8 @@
   },
   {
     "href": "index.html",
-    "size": 1312,
-    "integrity": "sha256-2TI4NJJ1S9StVG1+gIbVoPmXPRemB2FkufsFmurJ00k= sha384-E8SFT54RNTqzMlHCqSVWc15ZPr3JujsUUm2BcAJAFF5A+nqMBz7n8eSiu3kspN58 sha512-eUBLljI+b1ozQlZov8egFf05G/4PlpiD4kVPTxSJid9xMNBl6C992l0qv5mqIL6+2GSHFHUH0363G+4dezZr0Q=="
+    "size": 1319,
+    "integrity": "sha256-PE32tUXwav9j6VfW2RQEhvmSUJx9hrb01MPqp4LxY7w= sha384-CuvZxHDm4eGKNc6YJ6vx/gokF2VTBKoO4lQdxWzwrF9z+vK/ZDR/L/L16KsG6Sni sha512-U8MdYJ6SnQbYMOf2BdlHBS8TzR9cKoEcLPYXJf8GRufOgJcKaGkcMTl5scPuSgydMUuz1Kp9BwCOTnFn8CHmoA=="
   },
   {
     "href": "main-es2015.6e235d57a511c7e3cce6.js",
