@@ -1,3 +1,5 @@
+@import '../../global';
+
 .green-card {
   --color: white;
   --background: #00a831;
@@ -8,6 +10,8 @@
   font-size: 3.5vw;
   font-weight: bold;
   text-align: center;
+  padding-top: 0.75em;
+  padding-bottom: 0.25em;
 }
 
 @keyframes fadeIn {
@@ -85,25 +89,4 @@ $scoreboard: scoreboard, sans-serif;
     font-size: 60%;
     vertical-align: middle;
   }
-}
-
-.team-lozenge {
-  display: inline-block;
-  /*
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid white;
-  border-radius: 1em;
-  padding-left: .5em;
-  padding-right: .5em;
-  */
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
-}
-
-.team-emoji {
-  border: 1px solid #008024;
-  border-radius: 1em;
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
 }

@@ -1,6 +1,12 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { SettingsService } from '../settings.service';
+import { ModalController } from '@ionic/angular';
+
+import { SettingsService } from '../../lib/settings.service';
+import { APIDatabase } from '../../lib/api/database';
+import { Team } from '../../lib/model/team';
+
+import { TeamPage } from '../team-page/team-page.page';
 
 // import Positions from '../../lib/model/positions';
 // import Player from '../../lib/model/player';
@@ -14,22 +20,42 @@ export class DiamondComponent implements OnInit {
   @Input() public game: any;
   @Output("refresh") public refresh: EventEmitter<any> = new EventEmitter();
 
-  public playerFontSize = '1.1rem';
-
-  public coordinates = {
-    first:  [ 430, 355 ],
-    second: [ 328, 190 ],
-    third:  [ 225, 355 ],
+  public font = {
+    color: 'white',
+    family: 'Arial Narrow Bold, Arial Narrow, Impact, sans-serif',
+    size: '1.5rem',
+    strokeWidth: 0.1,
+    weight: '500',
   };
 
-  constructor(private settings: SettingsService) {
-    console.debug('Diamond component created.');
+  public coordinates = {
+    // [ x, y ]
+    first:   [ 440, 355 ],
+    second:  [ 328, 190 ],
+    third:   [ 215, 355 ],
+    home:    [ 328, 505 ],
+    pitcher: [ 328, 290 ],
+  };
+
+  public teams = {} as { [key: string]: Team };
+
+  constructor(
+    public database: APIDatabase,
+    public modalController: ModalController,
+    public settings: SettingsService,
+  ) {
+    // console.debug('Diamond component created.');
   }
 
   async ngOnInit() {
-    console.debug('Diamond component initialized.');
-    console.debug(this.game);
-    return this.settings.ready;
+    // console.debug('Diamond component initialized.');
+    // console.debug(this.game);
+    await this.settings.ready;
+    for (const team of (await this.database.teams())) {
+      this.teams[team.id] = team;
+    }
+
+    return true;
   }
 
   isFavorite(teamId: string) {
@@ -97,5 +123,16 @@ export class DiamondComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  async openTeam(id: string) {
+    console.debug(`opening team: ${id}`);
+    const modal = await this.modalController.create({
+      component: TeamPage,
+      componentProps: {
+        id: id,
+      },
+    });
+    return await modal.present();
   }
 }
