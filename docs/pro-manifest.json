@@ -637,7 +637,7 @@
   {
     "href": "ngsw.json",
     "size": 21138,
-    "integrity": "sha256-rpQpETRt1Qp7UtijuAaliS06ELSCIomqY4eePqc2wFQ= sha384-pE1/JGCemHYUzgCp8B6zzowys6a7abTBtX1+0D0Zq3V/V18KjiXOjipn4O4I/kUA sha512-gJqWEsF08MWqW+hX0qzxHRVGFMbXAENiW1vmE6jfyEuxQfnhB+EfIJWfiCabpFgOHn60hndzCbKFiL4T1XeCJA=="
+    "integrity": "sha256-XGJt6zOaeX/sUvKuUQNAYnxcy9i/1lQ5KEkldm9rPMo= sha384-aD9URwvy4/ljx/M/CyFtS8EmOqcaxsWGlGios6s742sFRYFUvo6a55T39frs35pZ sha512-2ERYRltkljSfTYtiHK88wE/+jJhvX9ag3YaWnzLTL6AYmgzb98XzbmFxPrmMYFsK+crk8qEhyGlnjqDwHb93DQ=="
   },
   {
     "href": "polyfills-core-js-es2015.988989edad9762881abf.js",
