@@ -602,17 +602,17 @@
   {
     "href": "index.html",
     "size": 1553,
-    "integrity": "sha256-tljOuX3a8zUKAd4v4HJjgJtCfd3D/JCM45DJ7adjKW8= sha384-5FOMw4AOGGzV8XXgUkoen0gKxRFmM4ITnJ8XCHY6n6Gi2PDNmAhir0e7Lc98NvUQ sha512-FVrF6OoBWXgPVoAhBPXBN28mqIEPQvFKAAgYIlpj4rAbyc3rwkurcCJh2+ANTRMm+2XSNF/KoCh5qXtVRaSg2g=="
+    "integrity": "sha256-omi80YIEPf9e0MPLceYUN09C8rEoVjOYb/0PbZzHNso= sha384-qKXJsnMrAIGBhq8GU0H5CU5xSAcywe/vUfC84fBW1FEZJ75eUzuFslUhY+sSuOhH sha512-ALa2LcHZI/X+qGBRDdbJBfS0TCKN4dPvahfaWbe4v4k8rI7qicTppeAfjr5RkXjb4nhYeryCVKcoDwGTGrRv6g=="
   },
   {
-    "href": "main-es2015.c8d3c0dcea309e560014.js",
-    "size": 746627,
-    "integrity": "sha256-4iSspRdPHHY2PUtvurPefqBTM0RNRpFaCI8ai02Hb3w= sha384-qJ7wDhZTCrixYQCdvheVbxFMg45qr1hN21rqUubCed4u65X47T/Nr6z7dQ0BwBL1 sha512-/IZgL5U0sJ7aNuymPpRIq/XL1W9wOtyKrZlsntg6hAZo6bRUepb1kG2N6Ti4f8M8xNqPygCwHEN41vJ9gNsQIQ=="
+    "href": "main-es2015.469b0ff5d3a001993162.js",
+    "size": 747711,
+    "integrity": "sha256-sxGLrCEe/ikLhRfYLLfeqD5Uj0YjR+f5305I8F83UyI= sha384-fnbdY/CS+XGhuvR10HAIgA++0WZ4LlsQK0H/QZkySKSSXhivHcUgFPzHTSsfcoHf sha512-tnrYtPBgGJbEq5lrZ99DR2h+HT2h/pg7XPiAGfeIz45BLEtEodZ07z3JdTL0rMOXsYltyDUZHFLH9tkZbhsnvA=="
   },
   {
-    "href": "main-es5.c8d3c0dcea309e560014.js",
-    "size": 842059,
-    "integrity": "sha256-lNIEQDYCJxL6R0im5a9pyGxMUFSDtu5EyhaCS74cyfo= sha384-c/VuCucAFgXN4Isqsj8ERcN0OqM4HUHy+U7DCYxmamKxw6OFDn56K3AuMo6MhAID sha512-lTxNU2wbqAqOVdc/CjMHWYLL653jiZjFj29tFmAPFynGngI6ZOWDHuswxpVHCn3/8iNIUchkYQLWRxYaFI5U5A=="
+    "href": "main-es5.469b0ff5d3a001993162.js",
+    "size": 843293,
+    "integrity": "sha256-mHsu8XNwilqtCasl//t6j82UbGj+0+eK0Mja+5CJ4GM= sha384-J726msJ4+GrakxcWDrUIQhDR0LlVpN3Nha9L7yXQmLmAVXByFcMUbE7gHj3vIxTq sha512-rXopnLN6gZNFdxPS3bIAYdisOaLggKAOB4QC2XP3G7DWhyu03KszapCBZU82Q1KWMDHKe281/YZQFfq6355Kyw=="
   },
   {
     "href": "manifest.webmanifest",
@@ -627,7 +627,7 @@
   {
     "href": "ngsw.json",
     "size": 20884,
-    "integrity": "sha256-r+jWgI7ee09GdgyXUAADoNWnlJiAfUneMHJ1ADvm0oE= sha384-5z/+2Sh/I/D40FDWlKDh/45o+OdmKIqDVfUHai8/notTESX0BBLC9vQH2/GuGJMH sha512-rZx/8C48QVnARQL0I1zyRcpSS0iBvLuBJPPa66hesnzfMwcbgUu89VHFsYaRC8kSZbqN3rXjzSmW4cfgI+8IEg=="
+    "integrity": "sha256-1nP1CdgMrJF1OG004tiZdKzErpYJorNImT9035z80Dc= sha384-yWhI124CasBUcdZCPs6VZIR1WYxMo5jnSO7aRqIHoWAQ3tvtTFzZ7+qhcAGqZFTT sha512-3OCKb8uViEZsV3ZRsJOFoo6alSjnPQT0omX/Ab30Wf9mN42unhAZIcAt7VTh+VrK3fs8IXBsxkgkauKUfikSIQ=="
   },
   {
     "href": "polyfills-core-js-es2015.80056137ebe59535433d.js",
