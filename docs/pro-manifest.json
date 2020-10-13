@@ -602,17 +602,17 @@
   {
     "href": "index.html",
     "size": 1553,
-    "integrity": "sha256-IGaN12SAiAVnMiIlnqiSQLtk0xDBb/cSBLV0RMHF1Rk= sha384-sq2k2csjqq8DgjXg1nJkEhcoqSe7N8EGmYb0oVtX9ZUrlDMaoUgwDjMlwS0wuqq+ sha512-TNg70ntjQTJ2+4Wscsw4cXLUqFeVuQIQjA1RHVy43EFkcMKQRthA6MIijd57V1mLbVz51bmhCmdWL9mKkWA9sw=="
+    "integrity": "sha256-eGhmUzTZe/6c4QQko7y7F8Z9SFStnPOZT6YrIZrg630= sha384-Qrvia9DbnIdKhZsjrOJB4WMDpXnwSldAB9JPRpniv6mM3y4VjZp1QFBg8jTFEtCv sha512-twOnYVsRffctsm+6pkR7E/rCBnpEaPwiP7rtmKKiEBTTQqtCtf/mKM/4M1empnvuRBrEt0Az/BWGBqfk6nvBwQ=="
   },
   {
-    "href": "main-es2015.2bfd3eddd1c118ea7f5c.js",
-    "size": 749122,
-    "integrity": "sha256-HI6hXHBb0xX6HYpQE2CtludiTreMd9rVcJ4VzS+uZTU= sha384-EfbZ/svFxaRiUA+YlKlNY368z3xj9g9RWpg+ThJDw4EHhee39iNTVbWglgfWWRLA sha512-UR9KTbGLlrOabT4tvml9wryzlqMYCBOAytw5AAGo3Kev2TNa9c4WVJ1CwDGgx15tD37NmY9gQMzyE71XafJO+A=="
+    "href": "main-es2015.613348a612055987f0b4.js",
+    "size": 750031,
+    "integrity": "sha256-vbM2szyARRfn6Dy5ge1s9GCu2sz4IBXSFjCdtAm6Ig8= sha384-H1uvAR/G7XFDH9nh7kthCpMVvKjEuAkZ52jJXq4Ggf/zh4ctjYAbOUjSkZoVo57z sha512-HAwXPivzOBBN7Dc7l/WzA94BjuZ5jdQ5bzxkVrGQ/MzzEZKjf/uCC6d7YWXSR7FQL13oX+3s9EWd7eeP1BkZag=="
   },
   {
-    "href": "main-es5.2bfd3eddd1c118ea7f5c.js",
-    "size": 847958,
-    "integrity": "sha256-HAD+1mCZFxMibB4RGgvgl1PlrVNTWZq5TS46VNmsO/o= sha384-L4PUD3Uz2cPKFda/M/VWY4UCZiFGh2unfePAScOUCfgX0mGT7yqz6xnamOgOTsa2 sha512-TGO1O3QnSPLPB+0v2d4vTRYSp+hRVfjKSY+zh2HWFYwdDO0jdmrhpvzzcaMQ0p2MQ6EZqb5BapOvDW58P2Z0PQ=="
+    "href": "main-es5.613348a612055987f0b4.js",
+    "size": 849025,
+    "integrity": "sha256-TOC1BZEVxSGzCn9IWll/TI20akhFxkoLkoupSC2FyqM= sha384-//M2G0OUBw2lXElzalJQZULAwBJG2K0S5jQ5UOebJgbHl5M4ALdfSLQAUPM10CDK sha512-eeYmPluCEpzUmkwC/PDgj5RIAjMYq0tBUV4lEksrOK7YLU/Pv+XGLDi9u2l8I5MIAJu/oEf4byyReHr5ANvtEg=="
   },
   {
     "href": "manifest.webmanifest",
@@ -675,9 +675,9 @@
     "integrity": "sha256-gkCRO+qwm/Wl/jvRi4cFHz2BSC7wCeYp5plOOkqd+QE= sha384-RMPsmjO6XMz7WyAS9WgYfVAoRPWaIPfPl2NigKIZ3kHVNZFckqScaLAI820QLbgP sha512-LCHF0FYuVxqTehNCZD53ZHYB+bdV7km6bMmPbm/HjYe9P3iprGCYkGqbroAWT0wyQTzd03lLvIao8dhnMcohmw=="
   },
   {
-    "href": "styles.973f9d23dfbff4619b2e.css",
-    "size": 31875,
-    "integrity": "sha256-CGsxjoSKv6Iw2kBmSy3j4AroZIZO7F6oFY8GZt5+g6w= sha384-O8QILY6AH+4fN22PGTdD1DHMgtMP7XYVA0Dp6pmbvd3GrOCw/AKPZyXCFp+GoBXv sha512-8dFrS95rJY6SqhlAGXrLE03nIuK4sQwVcGumPs7dUbD0jz6v4qbpk7giqUHx5NioDBt8lywFRSEcOcI239+rTg=="
+    "href": "styles.6b29663bc16d4f24da06.css",
+    "size": 31927,
+    "integrity": "sha256-H3GSvnYEcoA8ijLQ50EcotSOUuqaHkymKtNY7eC64Pg= sha384-4zMHJ47BK3JdqhzgJ/eUueJy73gWq29U6So6Mx4h/bY3ZI0JmYywpK7V7q+NOx8f sha512-J+9m51oduNK9a3pHwTC7bCmTW7geM60f9KMU63d8CXQ3z6g5TZsUydY3dJbqRJR+Jpbwa+8h0VS3StIyHgUbag=="
   },
   {
     "href": "assets/Baseball_bat.svg",
