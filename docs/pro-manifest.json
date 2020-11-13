@@ -565,6 +565,11 @@
     "integrity": "sha256-ekqrMUFWBrzfD5E65Y1DGJEzbiHlECjvSjw2qACaay8= sha384-tav1noYBy+dHuXOdwup86dTVFGhDePAzKT/5bMb7oTO6oEuQ8i7+6+BbH+HbwHe9 sha512-SwkW621PFR71vMua30d10znSGlJktW/vumRIH7wbZYWiWaZKNxi2IdcyNOketyIIQtyWHr7khf3gr1BlD4BTeg=="
   },
   {
+    "href": "CNAME",
+    "size": 22,
+    "integrity": "sha256-9yORPP1b8S2aD1zxxxh9vmtQq9qlKkbvqwzFRYqTeb0= sha384-Mf2WqK+eANmwxI6JBF3a46atXH4bUECIICFutdUEeTVc1iZrgDMqs9E3Sxgs+1gn sha512-IRCG1hu2CtMwXqj3b1srn27ME2HJFH9cY93f0564x+CiERrdJnimLk9L79h00/FIxFwhlvZUuHRdAoj8+BYw9A=="
+  },
+  {
     "href": "arial-narrow-bold-italic.3f049b44bc5dbaed5620.ttf",
     "size": 183932,
     "integrity": "sha256-A1z7i3dufOJ/TA6g3DyjzPhcjaXVlZXOzd8C3pZvuYU= sha384-KHeXibnZD3WVfic+B35Nn7OBbsNtkOHiOtzKBWuZqX7gJ3B0UYg2ypKQOgUFuVEx sha512-QS1xJ/dJ1W2UJa6wd+HNodolsozOQIzwsyzBurcg57GJo2LkjXMiqSAPx/F+1E9tA5NmlxlvXsfDLJewVcQu+A=="
